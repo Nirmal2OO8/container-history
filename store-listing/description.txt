@@ -1,0 +1,18 @@
+SUMMARY (max ~250 chars, shown in search results):
+Remembers which container each site was visited in and reopens it correctly. Browse and filter your full history by container.
+
+LONG DESCRIPTION (AMO listing body, Markdown-lite supported):
+
+Container History tracks which Firefox Multi-Account Container each page you visit belongs to, so you can browse, search, and filter your history by container — and never lose track of which identity a site was opened under.
+
+Features:
+* Automatically records the container for every visited URL
+* Search and filter your full browsing history by container
+* Sort by most recent, most visited, or domain A-Z
+* One click to reopen any history entry in its original container
+* Keyboard shortcut (Ctrl+Shift+H / Cmd+Shift+H) to open the popup instantly
+* Right-click context menu integration
+
+All data is stored locally on your device. Nothing is ever sent to a server — see the Privacy Policy tab for details.
+
+Requires the Multi-Account Containers add-on to get the most value, though Container History works standalone.

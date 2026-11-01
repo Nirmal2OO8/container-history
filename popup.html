@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Container History</title>
+  <link rel="stylesheet" href="popup.css"/>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div id="search-wrap">
+        <svg class="search-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true">
+          <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="10" y1="10" x2="14.5" y2="14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input id="search" type="search" placeholder="Search history…" autocomplete="off" spellcheck="false"/>
+      </div>
+
+      <div id="controls-row">
+        <div class="dropdown">
+          <button id="filter-btn" class="control-btn" aria-haspopup="listbox" aria-expanded="false">
+            <span class="ctrl-dot" id="filter-btn-dot"></span>
+            <span id="filter-btn-label">All</span>
+            <svg class="chev" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div id="filter-panel" class="dropdown-panel" role="listbox" hidden></div>
+        </div>
+
+        <label class="sort-wrap">
+          <span class="sr-only">Sort by</span>
+          <select id="sort-select" class="control-btn control-select">
+            <option value="recent">Most recent</option>
+            <option value="frequent">Most visited</option>
+            <option value="alpha">Domain A→Z</option>
+          </select>
+        </label>
+
+        <span id="result-count" class="result-count"></span>
+      </div>
+    </header>
+
+    <div id="list-wrap">
+      <ul id="history-list" role="list"></ul>
+
+      <div id="load-more-wrap" hidden>
+        <button id="load-more-btn">Load more</button>
+      </div>
+
+      <div id="empty-state" hidden>
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7.5"/>
+          <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+          <line x1="9" y1="11" x2="13" y2="11"/>
+        </svg>
+        <p class="empty-title">Nothing here</p>
+        <p class="empty-sub">No history matches this filter</p>
+      </div>
+
+      <div id="error-state" hidden>
+        <p>Could not load history.</p>
+        <button id="retry-btn">Retry</button>
+      </div>
+
+      <div id="loading-overlay" aria-live="polite" aria-label="Loading" hidden>
+        <div class="skeleton-row"><span class="sk-icon"></span><span class="sk-text"></span></div>
+        <div class="skeleton-row"><span class="sk-icon"></span><span class="sk-text sk-text--short"></span></div>
+        <div class="skeleton-row"><span class="sk-icon"></span><span class="sk-text"></span></div>
+        <div class="skeleton-row"><span class="sk-icon"></span><span class="sk-text sk-text--short"></span></div>
+        <div class="skeleton-row"><span class="sk-icon"></span><span class="sk-text"></span></div>
+        <div class="skeleton-row"><span class="sk-icon"></span><span class="sk-text"></span></div>
+      </div>
+    </div>
+
+    <footer id="app-footer">
+      <span id="recording-since"></span>
+    </footer>
+  </div>
+
+  <div id="row-menu" class="row-menu" hidden role="menu"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

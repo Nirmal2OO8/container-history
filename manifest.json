@@ -1,0 +1,63 @@
+{
+  "manifest_version": 2,
+  "name": "Container History",
+  "version": "1.0.0",
+  "description": "Remembers which Firefox container each URL was visited in and reopens it correctly. Browse and filter your full history by container, never lose your session context again.",
+  "author": "Nirmal2OO8",
+  "developer": {
+    "name": "Nirmal2OO8",
+    "url": "https://github.com/Nirmal2OO8/container-history"
+  },
+  "homepage_url": "https://github.com/Nirmal2OO8/container-history",
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "permissions": [
+    "history",
+    "tabs",
+    "contextualIdentities",
+    "cookies",
+    "storage",
+    "contextMenus"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Container History",
+    "default_popup": "popup.html"
+  },
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": { "default": "Ctrl+Shift+H", "mac": "MacCtrl+Shift+H" },
+      "description": "Open Container History"
+    }
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "container-history@nirmal2oo8",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  }
+}
